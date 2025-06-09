@@ -23,6 +23,7 @@ body {
   font-size: 28px;
   margin: 0;
 }
+
 .banner {
   background: url('https://wallpaperaccess.com/full/2703652.png') center center/cover no-repeat;
   height: 400px;
@@ -52,4 +53,3 @@ body {
 .row-posters img:hover {
   transform: scale(1.08);
 }
-
