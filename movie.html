@@ -5,10 +5,55 @@
   <title>Movie Detail - Netflix</title>
   <link rel="stylesheet" href="style.css">
   <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: white;
+    }
+
+    .navbar {
+      background-color: #141414;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+    }
+
+    h1 {
+      color: #e50914;
+    }
+
+    .movie-row {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 30px;
+      gap: 30px;
+    }
+
+    .movie-card {
+      background-color: #1c1c1c;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 300px;
+      flex: 1 1 300px;
+    }
+
+    .movie-card h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
     .video-container {
       position: relative;
-      max-width: 700px;
-      margin-top: 20px;
+      margin-top: 10px;
     }
 
     .play-button {
@@ -16,8 +61,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 20px;
-      padding: 10px 20px;
+      font-size: 16px;
+      padding: 8px 16px;
       background-color: rgba(0, 0, 0, 0.6);
       color: white;
       border: none;
@@ -40,33 +85,60 @@
     </div>
   </div>
 
-  <div style="padding: 40px;">
-    <h2>Movie Title</h2>
-    <p><strong>Genre:</strong> Action, Thriller</p>
-    <p><strong>Description:</strong> A thrilling journey of a secret agent saving the world from chaos.</p>
+  <div class="movie-row">
+    <!-- Movie 1 -->
+    <div class="movie-card">
+      <h2>Mission Impossible</h2>
+      <p><strong>Genre:</strong> Action, Thriller</p>
+      <p><strong>Description:</strong> A secret agent saving the world from chaos.</p>
+      <div class="video-container">
+        <video id="video1" poster="https://image.tmdb.org/t/p/w500/8YFL5QQVPy3AgrEQxNYVSgiPEbe.jpg">
+          <source src="sample-video.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+        <button class="play-button" onclick="playVideo('video1', this)">▶ Play</button>
+      </div>
+    </div>
 
-    <div class="video-container">
-      <video id="videoPlayer" poster="https://image.tmdb.org/t/p/w500/8YFL5QQVPy3AgrEQxNYVSgiPEbe.jpg">
-        <source src="sample-video.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
-      </video>
-      <button id="playBtn" class="play-button">▶ Play</button>
+    <!-- Movie 2 -->
+    <div class="movie-card">
+      <h2>Inception</h2>
+      <p><strong>Genre:</strong> Sci-Fi, Mystery</p>
+      <p><strong>Description:</strong> A thief steals corporate secrets through dreams.</p>
+      <div class="video-container">
+        <video id="video2" poster="https://image.tmdb.org/t/p/w500/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg">
+          <source src="sample-video.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+        <button class="play-button" onclick="playVideo('video2', this)">▶ Play</button>
+      </div>
+    </div>
+
+    <!-- Movie 3 -->
+    <div class="movie-card">
+      <h2>Interstellar</h2>
+      <p><strong>Genre:</strong> Sci-Fi, Adventure</p>
+      <p><strong>Description:</strong> Explorers travel through a wormhole in space.</p>
+      <div class="video-container">
+        <video id="video3" poster="https://image.tmdb.org/t/p/w500/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg">
+          <source src="sample-video.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+        <button class="play-button" onclick="playVideo('video3', this)">▶ Play</button>
+      </div>
     </div>
   </div>
 
   <script>
-    const video = document.getElementById("videoPlayer");
-    const playBtn = document.getElementById("playBtn");
-
-    playBtn.addEventListener("click", () => {
+    function playVideo(videoId, button) {
+      const video = document.getElementById(videoId);
       video.play();
-      playBtn.style.display = "none";
-    });
+      button.style.display = 'none';
 
-    video.addEventListener("pause", () => {
-      playBtn.style.display = "block";
-    });
+      video.addEventListener('pause', () => {
+        button.style.display = 'block';
+      });
+    }
   </script>
 </body>
 </html>
-
