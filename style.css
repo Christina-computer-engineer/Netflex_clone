@@ -18,7 +18,11 @@ body {
   margin-left: 20px;
   text-decoration: none;
 }
-
+.navbar h1 {
+  color: #e50914; /* This is the signature red used by Netflix */
+  font-size: 28px;
+  margin: 0;
+}
 .banner {
   background: url('https://wallpaperaccess.com/full/2703652.png') center center/cover no-repeat;
   height: 400px;
