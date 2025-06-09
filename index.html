@@ -1,34 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Netflix Home</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Welcome to Netflix</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    .background {
+      background-image: url('https://cdn.wallpapersafari.com/31/86/n35mgN.jpg');
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .overlay h1 {
+      margin-bottom: 20px;
+      font-size: 32px;
+      color: #e50914;
+    }
+
+    .overlay p {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .overlay input[type="email"] {
+      padding: 10px;
+      width: 80%;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+
+    .overlay button {
+      padding: 10px 20px;
+      background-color: #e50914;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .overlay button:hover {
+      background-color: #c40812;
+    }
+  </style>
 </head>
 <body>
-  <div class="navbar">
-    <h1>NETFLIX</h1>
-    <div>
-      <a href="home.html">Home</a>
-      <a href="movie.html">Movie</a>
-      <a href="profile.html">Profile</a>
-      <a href="login.html">Login</a>
+  <div class="background">
+    <div class="overlay">
+      <h1>Welcome to Netflix</h1>
+      <p>Enter your email to get started</p>
+      <form onsubmit="return redirectToHome()">
+        <input type="email" id="email" placeholder="abc@gmail.com" required><br />
+        <button type="submit">Get Started</button>
+      </form>
     </div>
   </div>
 
-  <div class="banner">
-    <div>
-      <h2>Featured Movie</h2>
-      <p>Watch now and enjoy the latest blockbusters.</p>
-    </div>
-  </div>
-
-  <div class="row">
-    <h3>Trending Now</h3>
-    <div class="row-posters">
-      <a href="movie.html"><img src="https://image.tmdb.org/t/p/w500/8YFL5QQVPy3AgrEQxNYVSgiPEbe.jpg" alt="Movie 1"></a>
-      <img src="https://image.tmdb.org/t/p/w500/6EdKBYkB1ssgGjc249ud1L55o8d.jpg" alt="Movie 2">
-    </div>
-  </div>
+  <script>
+    function redirectToHome() {
+      const email = document.getElementById("email").value;
+      // You can add email validation or storage here if you want
+      window.location.href = "home.html"; // Redirect after clicking Get Started
+      return false; // prevent form from submitting normally
+    }
+  </script>
 </body>
 </html>
