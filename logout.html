@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Logout - Netflix</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .logout-box {
+      background-color: #1c1c1c;
+      padding: 40px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 0 10px #e50914;
+    }
+
+    .logout-box h2 {
+      margin-bottom: 20px;
+    }
+
+    .logout-box button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .yes-btn {
+      background-color: #e50914;
+      color: white;
+    }
+
+    .cancel-btn {
+      background-color: #333;
+      color: white;
+    }
+
+    .cancel-btn:hover {
+      background-color: #555;
+    }
+
+    .yes-btn:hover {
+      background-color: #c40812;
+    }
+  </style>
+</head>
+<body>
+  <div class="logout-box">
+    <h2>Are you sure you want to logout?</h2>
+    <button class="yes-btn" onclick="logout()">Yes</button>
+    <button class="cancel-btn" onclick="cancelLogout()">Cancel</button>
+  </div>
+
+  <script>
+    function logout() {
+      // Redirect to login or home page
+      window.location.href = "index.html"; // adjust if your login page is different
+    }
+
+    function cancelLogout() {
+      window.history.back(); // Goes back to the previous page
+    }
+  </script>
+</body>
+</html>
+
